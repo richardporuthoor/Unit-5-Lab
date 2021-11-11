@@ -49,6 +49,14 @@ public class Woodwind {
         this.volume = volume;
     }
 
+    public String getPitch() {
+        return pitch;
+    }
+
+    public void setPitch(String pitch) {
+        this.pitch = pitch;
+    }
+
     public String toString(){
         String output = "";
         output += "\tWoodwind\n";
