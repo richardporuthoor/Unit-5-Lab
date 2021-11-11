@@ -9,11 +9,12 @@ public class Woodwind {
     private String pitch;
     private static String notes = "BAGABBBAAABCCBAGABBBBAABAG";
 
-    public Woodwind(String instrument, Reed reed, String brand, int volume) {
+    public Woodwind(String instrument, Reed reed, String brand, int volume, String pitch) {
         this.instrument = instrument;
         this.reed = reed;
         this.brand = brand;
         this.volume = volume;
+        this.pitch = pitch;
     }
 
     public String getName() {
@@ -46,6 +47,14 @@ public class Woodwind {
 
     public void setVolume(int volume) {
         this.volume = volume;
+    }
+
+    public String getPitch() {
+        return pitch;
+    }
+
+    public void setPitch(String pitch) {
+        this.pitch = pitch;
     }
 
     public String toString(){
