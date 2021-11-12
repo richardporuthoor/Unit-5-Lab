@@ -7,14 +7,16 @@ public class Woodwind {
     private String brand;
     private int volume;
     private String pitch;
-    private static String notes = "BAGABBBAAABCCBAGABBBBAABAG";
+    private String notes;
+    private static int metronome = 0;
 
-    public Woodwind(String instrument, Reed reed, String brand, int volume, String pitch) {
+    public Woodwind(String instrument, Reed reed, String brand, int volume, String pitch, String notes) {
         this.instrument = instrument;
         this.reed = reed;
         this.brand = brand;
         this.volume = volume;
         this.pitch = pitch;
+        this.notes = notes;
     }
 
     public String getName() {
@@ -69,5 +71,34 @@ public class Woodwind {
         output += "\t\t\t-Type:\t\t" + reed.getType() + "\n";
         output += "\t\t\t-Size:\t\t" + reed.getSize() + "\n";
         return output;
+    }
+
+    public void convert(){
+        String noteList = "ABCDEFG";
+        String newNotes = "";
+        for (int i = 0; i < notes.length(); i++){
+            for(int j = 0; j < noteList.length(); j++){
+                if(notes.charAt(i) == noteList.charAt(j)){
+                    if(pitch.equals("E flat")){
+                        if(j == 0){
+                            newNotes += noteList.charAt(noteList.length() - 2);
+                        } else if(j == 1){
+                            newNotes += noteList.charAt(noteList.length() - 1);
+                        } else{
+                            newNotes += noteList.charAt(j-2);
+                        }
+                    } else if(pitch.equals("B flat")){
+                        if(j == noteList.length()-1){
+                            newNotes += noteList.charAt(0);
+                        } else{
+                            newNotes += noteList.charAt(j+1);
+                        }
+                    } else{
+                        newNotes += noteList.charAt(j);
+                    }
+                }
+            }
+        }
+        System.out.println(newNotes);
     }
 }

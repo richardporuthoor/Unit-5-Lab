@@ -6,13 +6,15 @@ public class Brass {
     private int volume;
     private String pitch;
     private Boolean keys;
+    private String notes;
 
-    public Brass(String instrument, String brand, int volume, String pitch, Boolean keys) {
+    public Brass(String instrument, String brand, int volume, String pitch, Boolean keys, String notes) {
         this.instrument = instrument;
         this.brand = brand;
         this.volume = volume;
         this.pitch = pitch;
         this.keys = keys;
+        this.notes = notes;
     }
 
     public String getInstrument() {
@@ -56,6 +58,14 @@ public class Brass {
         this.keys = keys;
     }
 
+    public String getNotes() {
+        return notes;
+    }
+
+    public void setNotes(String notes) {
+        this.notes = notes;
+    }
+
     public String toString(){
         String output = "";
         output += "\tBrass\n";
@@ -67,4 +77,32 @@ public class Brass {
         return output;
     }
 
+    public void convert(){
+        String noteList = "ABCDEFG";
+        String newNotes = "";
+        for (int i = 0; i < notes.length(); i++){
+            for(int j = 0; j < noteList.length(); j++){
+                if(notes.charAt(i) == noteList.charAt(j)){
+                    if(pitch.equals("E flat")){
+                        if(j == 0){
+                            newNotes += noteList.charAt(noteList.length() - 2);
+                        } else if(j == 1){
+                            newNotes += noteList.charAt(noteList.length() - 1);
+                        } else{
+                            newNotes += noteList.charAt(j-2);
+                        }
+                    } else if(pitch.equals("B flat")){
+                        if(j == noteList.length()-1){
+                            newNotes += noteList.charAt(0);
+                        } else{
+                            newNotes += noteList.charAt(j+1);
+                        }
+                    } else{
+                        newNotes += noteList.charAt(j);
+                    }
+                }
+            }
+        }
+        System.out.println(newNotes);
+    }
 }
