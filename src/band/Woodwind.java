@@ -59,6 +59,10 @@ public class Woodwind {
         this.pitch = pitch;
     }
 
+    /**
+     * This method prints the information about the objects
+     * @return string of information about the object.
+     */
     public String toString(){
         String output = "";
         output += "\tWoodwind\n";
@@ -73,8 +77,14 @@ public class Woodwind {
         return output;
     }
 
+    /**
+     * This method converts the notes based on the pitch of the instrument.
+     * It then prints the new notes.
+     */
     public void convert(){
         String noteList = "ABCDEFG";
+        System.out.println("Original notes: " + notes);
+        System.out.println("Pitch: " + pitch);
         String newNotes = "";
         for (int i = 0; i < notes.length(); i++){
             for(int j = 0; j < noteList.length(); j++){
@@ -99,6 +109,6 @@ public class Woodwind {
                 }
             }
         }
-        System.out.println(newNotes);
+        System.out.println("New notes: " + newNotes);
     }
 }
