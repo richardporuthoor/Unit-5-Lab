@@ -4,6 +4,7 @@ public class Reed {
     private String type;
     private double size;
     private String brand;
+    private static int metronome = 0;
 
     public Reed(String type, double size, String brand) {
         this.type = type;

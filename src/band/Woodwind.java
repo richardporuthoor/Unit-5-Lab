@@ -19,11 +19,11 @@ public class Woodwind {
         this.notes = notes;
     }
 
-    public String getName() {
+    public String getInstrument() {
         return instrument;
     }
 
-    public void setName(String name) {
+    public void setInstrument(String name) {
         this.instrument = instrument;
     }
 
@@ -59,6 +59,22 @@ public class Woodwind {
         this.pitch = pitch;
     }
 
+    public String getNotes() {
+        return notes;
+    }
+
+    public void setNotes(String notes) {
+        this.notes = notes;
+    }
+
+    public static int getMetronome() {
+        return metronome;
+    }
+
+    public static void setMetronome(int metronome) {
+        Woodwind.metronome = metronome;
+    }
+
     /**
      * This method prints the information about the objects
      * @return string of information about the object.
@@ -81,10 +97,8 @@ public class Woodwind {
      * This method converts the notes based on the pitch of the instrument.
      * It then prints the new notes.
      */
-    public void convert(){
+    public String convert(){
         String noteList = "ABCDEFG";
-        System.out.println("Original notes: " + notes);
-        System.out.println("Pitch: " + pitch);
         String newNotes = "";
         for (int i = 0; i < notes.length(); i++){
             for(int j = 0; j < noteList.length(); j++){
@@ -108,7 +122,8 @@ public class Woodwind {
                     }
                 }
             }
+            metronome++;
         }
-        System.out.println("New notes: " + newNotes);
+        return newNotes;
     }
 }

@@ -7,6 +7,7 @@ public class Brass {
     private String pitch;
     private Boolean keys;
     private String notes;
+    private static int metronome = 0;
 
     public Brass(String instrument, String brand, int volume, String pitch, Boolean keys, String notes) {
         this.instrument = instrument;
@@ -66,6 +67,14 @@ public class Brass {
         this.notes = notes;
     }
 
+    public static int getMetronome() {
+        return metronome;
+    }
+
+    public static void setMetronome(int metronome) {
+        Brass.metronome = metronome;
+    }
+
     /**
      * This method prints the information about the objects
      * @return string of information about the object.
@@ -84,10 +93,8 @@ public class Brass {
      * This method converts the notes based on the pitch of the instrument.
      * It then prints the new notes.
      */
-    public void convert(){
+    public String convert(){
         String noteList = "ABCDEFG";
-        System.out.println("Original notes: " + notes);
-        System.out.println("Pitch: " + pitch);
         String newNotes = "";
         for (int i = 0; i < notes.length(); i++){
             for(int j = 0; j < noteList.length(); j++){
@@ -111,7 +118,8 @@ public class Brass {
                     }
                 }
             }
+            metronome++;
         }
-        System.out.println("New notes: " + newNotes);
+        return newNotes;
     }
 }
