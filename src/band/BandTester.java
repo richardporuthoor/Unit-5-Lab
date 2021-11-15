@@ -18,11 +18,14 @@ public class BandTester {
         System.out.println("Original Notes: " + instrument1.getNotes());
         System.out.println("Pitch: " + instrument1.getPitch());
         System.out.println("New Notes: " + instrument1.convert());
+        System.out.println();
         System.out.println("Brass Instrument: " + instrument2.getInstrument());
         System.out.println("Original Notes: " + instrument2.getNotes());
         System.out.println("Pitch: " + instrument2.getPitch());
         System.out.println("New Notes: " + instrument2.convert());
+        System.out.println();
         System.out.println("Total Notes: " + (instrument1.getMetronome() + instrument2.getMetronome()));
+        System.out.println();
     }
 
     public static void louder(Woodwind instrument1, Brass instrument2){

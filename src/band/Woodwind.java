@@ -96,6 +96,7 @@ public class Woodwind {
     /**
      * This method converts the notes based on the pitch of the instrument.
      * It then prints the new notes.
+     * @return newNotes
      */
     public String convert(){
         String noteList = "ABCDEFG";
