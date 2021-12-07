@@ -59,21 +59,13 @@ public class Brass {
         this.keys = keys;
     }
 
-    public String getNotes() {
-        return notes;
-    }
+    public String getNotes() {return notes;}
 
-    public void setNotes(String notes) {
-        this.notes = notes;
-    }
+    public void setNotes(String notes) {this.notes = notes;}
 
-    public static int getMetronome() {
-        return metronome;
-    }
+    public static int getMetronome() {return metronome;}
 
-    public static void setMetronome(int metronome) {
-        Brass.metronome = metronome;
-    }
+    public static void setMetronome(int metronome) {Brass.metronome = metronome;}
 
     /**
      * This method prints the information about the objects
